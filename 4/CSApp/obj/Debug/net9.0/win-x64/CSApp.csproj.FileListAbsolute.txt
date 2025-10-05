@@ -1,0 +1,14 @@
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\bin\Debug\net9.0\win-x64\CSApp.exe
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\bin\Debug\net9.0\win-x64\CSApp.deps.json
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\bin\Debug\net9.0\win-x64\CSApp.runtimeconfig.json
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\bin\Debug\net9.0\win-x64\CSApp.dll
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\bin\Debug\net9.0\win-x64\CSApp.pdb
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\obj\Debug\net9.0\win-x64\CSApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\obj\Debug\net9.0\win-x64\CSApp.AssemblyInfoInputs.cache
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\obj\Debug\net9.0\win-x64\CSApp.AssemblyInfo.cs
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\obj\Debug\net9.0\win-x64\CSApp.csproj.CoreCompileInputs.cache
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\obj\Debug\net9.0\win-x64\CSApp.dll
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\obj\Debug\net9.0\win-x64\refint\CSApp.dll
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\obj\Debug\net9.0\win-x64\CSApp.pdb
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\obj\Debug\net9.0\win-x64\CSApp.genruntimeconfig.cache
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\obj\Debug\net9.0\win-x64\ref\CSApp.dll

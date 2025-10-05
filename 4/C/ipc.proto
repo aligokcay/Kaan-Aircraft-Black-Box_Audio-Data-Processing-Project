@@ -1,0 +1,442 @@
+/// VERSION: 0.2.0
+
+syntax = "proto3";
+
+// --------------------------------------------------------------------
+// ENUMs
+// --------------------------------------------------------------------
+
+/// @brief Command ID
+/// @details Command ID is used to identify the command sent to the server.
+enum CommandId {
+  RECORD_STATE = 0; // SET
+  WORKING_MODE = 1; // SET
+  START_IBIT = 2;   // SET
+  GET_IBIT = 3;     // GET
+  GET_CBIT = 4;     // GET
+  GET_PBIT = 5;     // GET
+  STATUS = 6;       // GET
+  VERSIONS = 7;     // GET
+  CONNECT = 8;      // SET
+  DISCONNECT = 9;   // SET
+  RECORD_INFO = 10; // GET
+  DOWNLOAD_RECORD = 11; // SET
+  UPLOAD_CONFIG = 12;   // SET - Upload JSON configuration file
+  GET_CONFIG = 13;      // GET - Get current configuration
+}
+
+/// @brief Record State
+/// @details Record State is used to set the record state.
+enum RecordState { 
+  RECORD = 0;        // RECORD
+  DO_NOT_RECORD = 1; // DO_NOT_RECORD
+}
+
+/// @brief Working Mode
+/// @details Working Mode is used to set the working mode.
+/// IDLE: System is idle. It is the default state.
+/// OPERATIONAL: System is operational. It is the normal state.
+/// MAINTENANCE: System is in maintenance mode. It is the maintenance state.
+enum WorkingMode { 
+  IDLE = 0;            // IDLE
+  OPERATIONAL = 1;     // OPERATIONAL
+  MAINTENANCE = 2;     // MAINTENANCE
+}
+
+/// @brief CBIT test bit positions
+/// @details CBIT test bit positions are used to identify the test bits.
+enum CbitTestBits {
+  CBIT_POWER = 0;           // checkPower
+  CBIT_ARINC429 = 1;        // checkARINC429
+  CBIT_MILSTD1553 = 2;      // checkMILSTD1553
+  CBIT_ARINC664 = 3;        // checkARIN664
+  CBIT_AUDIO_INTERFACE = 4; // checkAudioInterface
+  CBIT_CSMU = 6;            // checkCSMU (Test 5 atlanmýþ)
+  CBIT_RIPS = 7;            // checkRIPS
+  CBIT_CVR = 8;             // checkCVR
+  CBIT_FDR = 9;             // checkFDR
+  CBIT_CLOCK = 10;          // checkClock
+  CBIT_MODE = 11;           // checkMode
+  CBIT_DO_NOT_RECORD = 12;  // checkDoNotRecord
+}
+
+/// @brief PBIT test bit positions
+/// @details PBIT test bit positions are used to identify the test bits.
+enum PbitTestBits {
+  PBIT_POWER = 0;               // checkPower
+  PBIT_ARINC429 = 1;            // checkARINC429
+  PBIT_MILSTD1553 = 2;          // checkMILSTD1553
+  PBIT_ARINC664 = 3;            // checkARIN664
+  PBIT_AUDIO_INTERFACE = 4;     // checkAudioInterface
+  PBIT_ETHERNET = 5;            // checkEthernet
+  PBIT_SERIAL_INTERFACE = 6;    // checkSerialInterface
+  PBIT_DISCRETE_INTERFACE = 7;  // checkDiscreteInterface
+  PBIT_CSMU = 8;                // checkCSMU
+  PBIT_RIPS = 9;                // checkRIPS
+  PBIT_CVR = 10;                // checkCVR
+  PBIT_FDR = 11;                // checkFDR
+  PBIT_CLOCK = 12;              // checkClock
+  PBIT_MODE = 13;               // checkMode
+  PBIT_DO_NOT_RECORD = 14;      // checkDoNotRecord
+}
+
+/// @brief IBIT test bit positions
+/// @details IBIT test bit positions are used to identify the test bits.
+enum IbitTestBits {
+  IBIT_POWER = 0;               // checkPower
+  IBIT_ARINC429 = 1;            // checkARINC429
+  IBIT_MILSTD1553 = 2;          // checkMILSTD1553
+  IBIT_ARINC664 = 3;            // checkARIN664
+  IBIT_AUDIO_INTERFACE = 4;     // checkAudioInterface
+  IBIT_ETHERNET = 5;            // checkEthernet
+  IBIT_SERIAL_INTERFACE = 6;    // checkSerialInterface
+  IBIT_DISCRETE_INTERFACE = 7;  // checkDiscreteInterface
+  IBIT_CSMU = 8;                // checkCSMU
+  IBIT_RIPS = 9;                // checkRIPS
+  IBIT_CVR = 10;                // checkCVR
+  IBIT_FDR = 11;                // checkFDR
+  IBIT_CLOCK = 12;              // checkClock
+  IBIT_MODE = 13;               // checkMode
+  IBIT_DO_NOT_RECORD = 14;      // checkDoNotRecord
+}
+
+// --------------------------------------------------------------------
+// Diagnostics
+// --------------------------------------------------------------------
+
+/// @brief Resource Usage Data
+/// @details Resource Usage Data is used to get the resource usage data.
+message ResourceUsageData {
+  double cpu_usage_pct = 1;
+  double ram_usage_pct = 2;
+  double disk_usage_pct = 3;
+  double swap_usage_pct = 4;
+  double avg_cpu_usage_pct = 5; // For 1 min (e.g., 5, 15)
+}
+
+/// @brief Time Data
+/// @details Time Data is used to get the time data.
+message TimeData {
+  string time = 1;              // "YYYY-MM-DD HH:MM:SS.NNNNNNNNN"
+  bool is_valid = 2;            // 1: Valid, 0: Not Valid
+  uint64 software_uptime = 3;   // Application uptime
+  uint64 os_uptime = 4;         // OS uptime
+}
+
+/// @brief Version Data
+/// @details Version Data is used to get the version data.
+message VersionData {
+  string serial_number = 1;               // Serial number
+  string part_number = 2;                 // Part number
+  string hardware_version = 3;            // Hardware version
+  string kernel_version = 4;              // Kernel version
+  string image_version = 5;               // Image version
+  string software_version = 6;            // Software version
+}
+
+// --------------------------------------------------------------------
+// Built-in Test (CBIT, PBIT, IBIT)
+// --------------------------------------------------------------------
+
+message CbitResult {
+  bool check_power = 1;           // Test 0 - Güç kontrolü
+  bool check_arinc429 = 2;        // Test 1 - ARINC429 interface
+  bool check_milstd1553 = 3;      // Test 2 - MIL-STD-1553 interface
+  bool check_arinc664 = 4;        // Test 3 - ARINC664 interface
+  bool check_audio_interface = 5; // Test 4 - Audio interface
+  bool check_csmu = 6;            // Test 6 - CSMU (Crash Survivable Memory Unit)
+  bool check_rips = 7;            // Test 7 - RIPS sistemi
+  bool check_cvr = 8;             // Test 8 - Cockpit Voice Recorder
+  bool check_fdr = 9;             // Test 9 - Flight Data Recorder
+  bool check_clock = 10;          // Test 10 - Saat sistemi
+  bool check_mode = 11;           // Test 11 - Mod kontrolü
+  bool check_do_not_record = 12;  // Test 12 - "Kayýt yapma" modu
+}
+
+message PbitResult {
+  bool check_power = 1;             // Bit 0 - Güç kontrolü
+  bool check_arinc429 = 2;          // Bit 1 - ARINC429 interface
+  bool check_milstd1553 = 3;        // Bit 2 - MIL-STD-1553 interface
+  bool check_arinc664 = 4;          // Bit 3 - ARINC664 interface
+  bool check_audio_interface = 5;   // Bit 4 - Audio interface
+  bool check_ethernet = 6;          // Bit 5 - Ethernet interface
+  bool check_serial_interface = 7;  // Bit 6 - Serial interface
+  bool check_discrete_interface = 8; // Bit 7 - Discrete interface
+  bool check_csmu = 9;              // Bit 8 - CSMU (Crash Survivable Memory Unit)
+  bool check_rips = 10;             // Bit 9 - RIPS sistemi
+  bool check_cvr = 11;              // Bit 10 - Cockpit Voice Recorder
+  bool check_fdr = 12;              // Bit 11 - Flight Data Recorder
+  bool check_clock = 13;            // Bit 12 - Saat sistemi
+  bool check_mode = 14;             // Bit 13 - Mod kontrolü
+  bool check_do_not_record = 15;    // Bit 14 - "Kayýt yapma" modu
+}
+
+message IbitResult {
+  bool check_power = 1;             // Bit 0 - Güç kontrolü
+  bool check_arinc429 = 2;          // Bit 1 - ARINC429 interface
+  bool check_milstd1553 = 3;        // Bit 2 - MIL-STD-1553 interface
+  bool check_arinc664 = 4;          // Bit 3 - ARINC664 interface
+  bool check_audio_interface = 5;   // Bit 4 - Audio interface
+  bool check_ethernet = 6;          // Bit 5 - Ethernet interface
+  bool check_serial_interface = 7;  // Bit 6 - Serial interface
+  bool check_discrete_interface = 8; // Bit 7 - Discrete interface
+  bool check_csmu = 9;              // Bit 8 - CSMU (Crash Survivable Memory Unit)
+  bool check_rips = 10;             // Bit 9 - RIPS sistemi
+  bool check_cvr = 11;              // Bit 10 - Cockpit Voice Recorder
+  bool check_fdr = 12;              // Bit 11 - Flight Data Recorder
+  bool check_clock = 13;            // Bit 12 - Saat sistemi
+  bool check_mode = 14;             // Bit 13 - Mod kontrolü
+  bool check_do_not_record = 15;    // Bit 14 - "Kayýt yapma" modu
+}
+
+// --------------------------------------------------------------------
+// Flight Data Recorder Module
+// --------------------------------------------------------------------
+
+message FdrStatus {
+	bool is_recording = 1;           // 1: Recording, 0: Not Recording
+	bool arinc429_status = 2;        // 1: OK, 0: Not OK
+	bool milstd1553_status = 3;      // 1: OK, 0: Not OK
+	bool arinc664_status = 4;        // 1: OK, 0: Not OK
+}
+
+// --------------------------------------------------------------------
+// Cockpit Voice Recorder Module
+// --------------------------------------------------------------------
+
+message CvrStatus{
+  bool is_recording = 1;             // 1: Recording, 0: Not Recording
+  bool is_opening_microphone1 = 2;   // 1: Opening, 0: Not Opening
+  bool is_opening_microphone2 = 3;   // 1: Opening, 0: Not Opening
+  bool is_opening_microphone3 = 4;   // 1: Opening, 0: Not Opening
+  bool is_opening_microphone4 = 5;   // 1: Opening, 0: Not Opening
+  bool is_opening_area_mic = 6;      // 1: Opening, 0: Not Opening
+  bool audio_interface_status = 7;   // 1: OK, 0: Not OK
+}
+
+// --------------------------------------------------------------------
+// Record Module
+// --------------------------------------------------------------------
+
+/// @brief Record Types for NAND Memory System
+/// @details Defines the type of record data stored in NAND memory
+enum RecordType {
+  FDR_DATA = 0;    // Flight Data Recorder data
+  CVR_DATA = 1;    // Cockpit Voice Recorder data
+  ALL_DATA = 2;    // All data (FDR and CVR)
+}
+
+/// @brief Download Selection Type
+/// @details Defines different download selection criteria
+enum DownloadSelectionType {
+  BY_FLIGHT_NUMBER = 0;     // Download by specific flight number
+  BY_LAST_MINUTES = 1;      // Download last N minutes
+  BY_TIME_RANGE = 2;        // Download by time range
+  BY_ADDRESS_RANGE = 3;     // Download by NAND address range
+  CURRENT_FLIGHT = 4;       // Download current/last flight
+}
+
+/// @brief NAND Memory Block Information
+/// @details Information about a single block in NAND memory (1-minute data)
+message NandBlock {
+  uint32 block_address = 1;              // NAND block address
+  RecordType record_type = 2;            // FDR or CVR data
+  uint64 start_timestamp = 3;            // Block start time (Unix timestamp)
+  uint64 end_timestamp = 4;              // Block end time (Unix timestamp)
+  uint32 data_size = 5;                  // Actual data size in bytes
+  uint32 flight_number = 6;              // Flight number
+  uint32 sequence_in_flight = 7;         // Sequence number within flight
+  string md5_hash = 8;                   // MD5 hash of the block data
+  bool is_valid = 9;                     // Block data integrity status
+  bool is_current = 10;                  // Currently being written
+}
+
+/// @brief Flight Session Summary
+/// @details Summary of a complete flight session stored in NAND
+message FlightRecord {
+  uint32 flight_number = 1;              // Flight session number
+  uint64 start_time = 2;                 // Flight start time (Unix timestamp)
+  uint64 end_time = 3;                   // Flight end time (Unix timestamp)
+  uint32 duration_minutes = 4;           // Total flight duration in minutes
+  uint32 fdr_block_count = 5;            // Number of FDR blocks
+  uint32 cvr_block_count = 6;            // Number of CVR blocks
+  uint64 total_fdr_size = 7;             // Total FDR data size
+  uint64 total_cvr_size = 8;             // Total CVR data size
+  uint32 start_block_address = 9;        // First block address in NAND
+  uint32 end_block_address = 10;         // Last block address in NAND
+  bool is_complete = 11;                 // Flight record completed
+  repeated NandBlock blocks = 12;        // All blocks for this flight
+}
+
+/// @brief NAND Memory Status
+/// @details Current status of NAND memory system
+message NandMemoryStatus {
+  uint64 total_capacity = 1;             // Total NAND capacity in bytes
+  uint64 used_capacity = 2;              // Used NAND capacity in bytes
+  uint64 available_capacity = 3;         // Available NAND capacity in bytes
+  uint32 total_blocks = 4;               // Total number of blocks
+  uint32 used_blocks = 5;                // Used number of blocks
+  uint32 bad_blocks = 6;                 // Number of bad blocks
+  uint32 current_write_address = 7;      // Current write position
+  double wear_level_percentage = 8;      // Wear leveling percentage
+}
+
+/// @brief Record Information Response
+/// @details Complete record information from NAND memory
+message RecordInfoData {
+  repeated FlightRecord flights = 1;      // All flight records
+  FlightRecord current_flight = 2;        // Currently active flight (if any)
+  NandMemoryStatus memory_status = 3;     // NAND memory status
+  uint32 total_flights = 4;               // Total number of flights stored
+  uint32 oldest_flight_number = 5;        // Oldest available flight number
+  uint32 newest_flight_number = 6;        // Newest flight number
+}
+
+/// @brief Download Record Request
+/// @details Request to download records from NAND memory with various selection options
+message DownloadRecord {
+  DownloadSelectionType selection_type = 1;  // How to select data
+  
+  // Selection parameters (use based on selection_type)
+  uint32 flight_number = 2;                  // For BY_FLIGHT_NUMBER
+  uint32 last_minutes = 3;                   // For BY_LAST_MINUTES (e.g., 15 for last 15 minutes)
+  uint64 start_timestamp = 4;                // For BY_TIME_RANGE
+  uint64 end_timestamp = 5;                  // For BY_TIME_RANGE
+  uint32 start_address = 6;                  // For BY_ADDRESS_RANGE
+  uint32 end_address = 7;                    // For BY_ADDRESS_RANGE
+  
+  // Filter options
+  RecordType record_type_filter = 8;         // Optional: Only FDR or CVR (both if not specified)
+  bool include_metadata = 9;                 // Include block metadata
+  bool verify_md5 = 10;                      // Verify MD5 during extraction
+  uint32 max_blocks = 11;                    // Maximum number of blocks to return
+}
+
+/// @brief Download Record Response
+/// @details Response containing NAND memory data
+message DownloadRecordData {
+  repeated NandBlock selected_blocks = 1;    // Selected blocks from NAND
+  uint32 total_blocks = 2;                   // Total number of blocks
+  uint64 total_data_size = 3;                // Total size of all data
+  string archive_path = 4;                   // Path to generated archive file
+  string archive_md5 = 5;                    // MD5 of the archive
+  uint32 extraction_time_ms = 6;             // Time taken to extract from NAND
+  uint32 estimated_transfer_time_sec = 7;    // Estimated transfer time
+  bool has_integrity_errors = 8;             // Any blocks failed MD5 verification
+  repeated uint32 corrupted_blocks = 9;      // Addresses of corrupted blocks (if any)
+}
+
+// --------------------------------------------------------------------
+// Configuration Management
+// --------------------------------------------------------------------
+
+/// @brief Configuration Upload Request
+/// @details Request to upload JSON configuration to the device
+message UploadConfig {
+  string json_content = 1;       // JSON configuration content (for small files < 1MB)
+  string filename = 2;           // Original filename
+  string md5_hash = 3;           // MD5 hash of the JSON content
+  
+  // Chunked upload support for large files
+  bool is_chunked = 4;           // True if this is a chunked upload
+  string session_id = 5;         // Unique session ID for chunked uploads
+  uint32 chunk_index = 6;        // Current chunk number (0-based)
+  uint32 total_chunks = 7;       // Total number of chunks in this upload
+  bytes chunk_data = 8;          // Raw chunk data (for large files)
+  uint32 chunk_size = 9;         // Size of this chunk in bytes
+  string chunk_md5 = 10;         // MD5 hash of this specific chunk
+  uint64 total_file_size = 11;   // Total size of the complete file
+}
+
+/// @brief Configuration Upload Response
+/// @details Response to configuration upload request
+message UploadConfigData {
+  // Chunked upload support
+  bool is_chunked_response = 1;  // True if this is a chunked upload response
+  string session_id = 2;         // Session ID for chunked uploads
+  uint32 chunks_received = 3;    // Number of chunks received so far
+  uint32 chunks_expected = 4;    // Total chunks expected
+  bool upload_complete = 5;      // True when all chunks received
+  repeated uint32 missing_chunks = 6; // List of missing chunk indices (if any)
+}
+
+/// @brief Configuration Get Request
+/// @details Request to get current configuration
+message GetConfig {
+  // Chunked download support for large files
+  bool use_chunked = 1;          // Request chunked download for large files
+  uint32 chunk_size = 2;         // Preferred chunk size in bytes (default: 1MB)
+  uint32 chunk_index = 3;        // Specific chunk to download (for chunked mode)
+  string session_id = 4;         // Session ID for chunked downloads
+}
+
+/// @brief Configuration Get Response
+/// @details Response containing current configuration
+message GetConfigData {
+  string json_content = 1;       // Current JSON configuration (for small files < 1MB)
+  string md5_hash = 2;           // MD5 hash of current config
+  
+  // Chunked download support for large files
+  bool is_chunked = 3;           // True if this is a chunked download
+  string session_id = 4;         // Session ID for chunked downloads
+  uint32 chunk_index = 5;        // Current chunk number (0-based)
+  uint32 total_chunks = 6;       // Total number of chunks
+  bytes chunk_data = 7;          // Raw chunk data (for large files)
+  uint32 chunk_size = 8;         // Size of this chunk in bytes
+  string chunk_md5 = 9;          // MD5 hash of this specific chunk
+  uint64 total_file_size = 10;   // Total size of the complete file
+  bool is_last_chunk = 11;       // True if this is the last chunk
+}
+
+// --------------------------------------------------------------------
+// General Main Controller Module
+// --------------------------------------------------------------------
+
+/// @brief Status Data
+/// @details Status Data is used to get the status data.
+message StatusData {
+  RecordState record_state = 1;            // 1: Recording, 0: Not Recording
+  WorkingMode working_mode = 2;            // 2: Maintenance, 1: Operational, 0: Idle
+  ResourceUsageData resource_usage = 3;    // CPU, RAM, Disk, Swap usage diagnostic
+  TimeData time = 4;                       // Current time
+  FdrStatus fdr_status= 5;                 // FDR status structure
+  CvrStatus cvr_status = 6;                // CVR status structure
+  bool rips_status = 7;                    // RIPS status
+  CbitResult cbit_result = 8;              // CBIT test results
+  PbitResult pbit_result = 9;              // PBIT test results
+  IbitResult ibit_result = 10;             // IBIT test results
+}
+
+
+// --------------------------------------------------------------------
+// Base Message Structures
+// --------------------------------------------------------------------
+
+message IPCMessage {                                  // Request main structure
+  string jwt = 1;                                     // JWT token
+  CommandId command_id = 2;                           // Command ID
+  oneof data {
+    RecordState record_state = 3;                    // Set Record State (Record or Do Not Record)
+    WorkingMode working_mode = 4;                    // Set Working Mode (Idle, Operational, Maintenance)
+    DownloadRecord download_record= 5;               // Request Download Record
+    UploadConfig upload_config = 6;                  // Upload JSON Configuration
+    GetConfig get_config = 7;                        // Get Configuration Request
+  }
+}
+
+message IPCResponse {                                // Response main structure
+  bool success = 1;                                  // 1: Success, 0: Failure
+  oneof data {
+    RecordState record_state = 3;                    // Returned Record State
+    WorkingMode working_mode = 4;                    // Returned Working Mode
+    IbitResult ibit_result = 5;                      // Returned IBIT test results
+    CbitResult cbit_result = 6;                      // Returned CBIT test results
+    PbitResult pbit_result = 7;                      // Returned PBIT test results
+    StatusData status = 8;                           // Returned Status Data
+    VersionData versions = 9;                        // Returned Version Data
+    RecordInfoData record_info_data=10;              // Returned Record Info Data
+    DownloadRecordData download_record_data =11;     // Returned Download Record Data
+    UploadConfigData upload_config_data = 12;        // Returned Upload Config Data
+    GetConfigData get_config_data = 13;              // Returned Get Config Data
+  }
+}

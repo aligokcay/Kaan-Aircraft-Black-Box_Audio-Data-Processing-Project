@@ -1,0 +1,91 @@
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\bin\Debug\net9.0-windows\CSApp.exe
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\bin\Debug\net9.0-windows\CSApp.deps.json
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\bin\Debug\net9.0-windows\CSApp.runtimeconfig.json
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\bin\Debug\net9.0-windows\CSApp.dll
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\bin\Debug\net9.0-windows\CSApp.pdb
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\obj\Debug\net9.0-windows\CSApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\obj\Debug\net9.0-windows\CSApp.AssemblyInfoInputs.cache
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\obj\Debug\net9.0-windows\CSApp.AssemblyInfo.cs
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\obj\Debug\net9.0-windows\CSApp.csproj.CoreCompileInputs.cache
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\obj\Debug\net9.0-windows\CSApp.dll
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\obj\Debug\net9.0-windows\refint\CSApp.dll
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\obj\Debug\net9.0-windows\CSApp.pdb
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\obj\Debug\net9.0-windows\CSApp.genruntimeconfig.cache
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\obj\Debug\net9.0-windows\ref\CSApp.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\obj\Debug\net9.0-windows\CSApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\obj\Debug\net9.0-windows\CSApp.AssemblyInfoInputs.cache
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\obj\Debug\net9.0-windows\CSApp.AssemblyInfo.cs
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\obj\Debug\net9.0-windows\CSApp.csproj.CoreCompileInputs.cache
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\obj\Debug\net9.0-windows\CSApp.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\obj\Debug\net9.0-windows\refint\CSApp.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\obj\Debug\net9.0-windows\CSApp.pdb
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\obj\Debug\net9.0-windows\CSApp.csproj.AssemblyReference.cache
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\CSApp.exe
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\CSApp.deps.json
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\CSApp.runtimeconfig.json
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\CSApp.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\CSApp.pdb
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\AsyncIO.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\K4os.Hash.xxHash.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\Microsoft.Extensions.ObjectPool.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\NaCl.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\NetMQ.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\System.ServiceModel.Duplex.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\System.ServiceModel.Primitives.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\System.ServiceModel.Security.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\System.ServiceModel.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\cs\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\de\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\es\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\fr\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\it\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\ja\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\ko\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\pl\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\pt-BR\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\ru\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\tr\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\zh-Hans\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\bin\Debug\net9.0-windows\zh-Hant\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\obj\Debug\net9.0-windows\CSApp.csproj.Up2Date
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\obj\Debug\net9.0-windows\CSApp.genruntimeconfig.cache
+C:\Users\Mehmet Ali\Desktop\ctech\5\CSApp\obj\Debug\net9.0-windows\ref\CSApp.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\obj\Debug\net9.0-windows\CSApp.csproj.AssemblyReference.cache
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\obj\Debug\net9.0-windows\CSApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\obj\Debug\net9.0-windows\CSApp.AssemblyInfoInputs.cache
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\obj\Debug\net9.0-windows\CSApp.AssemblyInfo.cs
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\obj\Debug\net9.0-windows\CSApp.csproj.CoreCompileInputs.cache
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\obj\Debug\net9.0-windows\CSApp.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\obj\Debug\net9.0-windows\refint\CSApp.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\obj\Debug\net9.0-windows\CSApp.pdb
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\CSApp.exe
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\CSApp.deps.json
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\CSApp.runtimeconfig.json
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\CSApp.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\CSApp.pdb
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\AsyncIO.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\Google.Protobuf.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\K4os.Hash.xxHash.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\Microsoft.Extensions.ObjectPool.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\NaCl.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\NetMQ.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\System.ServiceModel.Duplex.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\System.ServiceModel.Primitives.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\System.ServiceModel.Security.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\System.ServiceModel.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\cs\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\de\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\es\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\fr\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\it\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\ja\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\ko\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\pl\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\pt-BR\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\ru\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\tr\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\zh-Hans\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\bin\Debug\net9.0-windows\zh-Hant\System.ServiceModel.Primitives.resources.dll
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\obj\Debug\net9.0-windows\CSApp.csproj.Up2Date
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\obj\Debug\net9.0-windows\CSApp.genruntimeconfig.cache
+C:\Users\Mehmet Ali\Desktop\ctech\5 - advanced\CSApp\obj\Debug\net9.0-windows\ref\CSApp.dll

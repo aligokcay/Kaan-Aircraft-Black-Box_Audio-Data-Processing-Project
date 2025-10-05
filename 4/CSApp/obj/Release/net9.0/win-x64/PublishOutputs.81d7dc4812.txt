@@ -1,0 +1,5 @@
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\bin\Release\net9.0\win-x64\publish\CSApp.exe
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\bin\Release\net9.0\win-x64\publish\CSApp.dll
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\bin\Release\net9.0\win-x64\publish\CSApp.deps.json
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\bin\Release\net9.0\win-x64\publish\CSApp.runtimeconfig.json
+C:\Users\Mehmet Ali\Desktop\ctech\3\CSApp\bin\Release\net9.0\win-x64\publish\CSApp.pdb

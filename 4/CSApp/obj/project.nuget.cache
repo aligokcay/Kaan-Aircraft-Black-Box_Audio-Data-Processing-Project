@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "oe6BIzHnuxA=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mehmet Ali\\Desktop\\ctech\\5 - advanced\\CSApp\\CSApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mehmet Ali\\.nuget\\packages\\asyncio\\0.1.69\\asyncio.0.1.69.nupkg.sha512",
+    "C:\\Users\\Mehmet Ali\\.nuget\\packages\\google.protobuf\\3.31.1\\google.protobuf.3.31.1.nupkg.sha512",
+    "C:\\Users\\Mehmet Ali\\.nuget\\packages\\k4os.hash.xxhash\\1.0.8\\k4os.hash.xxhash.1.0.8.nupkg.sha512",
+    "C:\\Users\\Mehmet Ali\\.nuget\\packages\\microsoft.extensions.objectpool\\8.0.10\\microsoft.extensions.objectpool.8.0.10.nupkg.sha512",
+    "C:\\Users\\Mehmet Ali\\.nuget\\packages\\nacl.net\\0.1.13\\nacl.net.0.1.13.nupkg.sha512",
+    "C:\\Users\\Mehmet Ali\\.nuget\\packages\\netmq\\4.0.2.1\\netmq.4.0.2.1.nupkg.sha512",
+    "C:\\Users\\Mehmet Ali\\.nuget\\packages\\system.security.cryptography.pkcs\\8.0.1\\system.security.cryptography.pkcs.8.0.1.nupkg.sha512",
+    "C:\\Users\\Mehmet Ali\\.nuget\\packages\\system.security.cryptography.xml\\8.0.2\\system.security.cryptography.xml.8.0.2.nupkg.sha512",
+    "C:\\Users\\Mehmet Ali\\.nuget\\packages\\system.servicemodel.primitives\\8.1.2\\system.servicemodel.primitives.8.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
